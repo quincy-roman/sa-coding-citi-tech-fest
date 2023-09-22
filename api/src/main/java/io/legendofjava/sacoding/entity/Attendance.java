@@ -1,7 +1,6 @@
 package io.legendofjava.sacoding.entity;
 
-import io.legendofjava.sacoding.Enum.AttendanceStatus;
-import lombok.Data;
+import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,11 +8,14 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-import java.util.Date;
+import io.legendofjava.sacoding.Enum.AttendanceStatus;
+import lombok.Data;
 
-@Entity
 @Data
+@Entity
+@Table(name = "ATTENDANCE")
 public class Attendance {
 	
 	@Id
