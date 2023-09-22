@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Aside } from '../aside.service';
+import { Aside } from '../../services/aside.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
