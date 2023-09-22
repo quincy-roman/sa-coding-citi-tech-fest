@@ -21,8 +21,6 @@ public interface LearningManagementService {
 	//Facilitator Service Methods
 	
 	Collection<Submission> getSubmissions(Collection<String> userIds);
-	
-	Collection<Submission> getSubmissionsForLearner(String userId);
 
 	Collection<Batch> getBatches(String facilitatorId);
 
