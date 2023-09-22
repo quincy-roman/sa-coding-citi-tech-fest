@@ -32,7 +32,6 @@ public class Submission {
 
     private Integer grade;
 
-    @CreationTimestamp
     @UpdateTimestamp
     private Date submittedDate;
 
