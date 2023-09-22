@@ -9,3 +9,8 @@ spring:
     hibernate:
       ddl-auto: update
       show-sql: true
+s3:
+  bucket:
+    name: bucket-hackathon-test-12983765123
+    accessKey:
+    secretKey:
