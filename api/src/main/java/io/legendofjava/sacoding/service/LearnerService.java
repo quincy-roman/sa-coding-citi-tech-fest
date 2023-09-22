@@ -33,7 +33,7 @@ public class LearnerService implements LearningManagementService {
 
     @Override
     public Collection<Submission> getSubmissions(Collection<String> userIds) {
-        return null;
+        return submissionRepository.findAllById(userIds);
     }
 
     @Override
