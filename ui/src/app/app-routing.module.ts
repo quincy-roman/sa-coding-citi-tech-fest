@@ -8,7 +8,7 @@ import { InProgressComponent } from './in-progress/in-progress.component';
 import { HomeComponent } from './home/home.component';
 import { FacilitatorHomeComponent } from './components/facilitator-home/facilitator-home.component';
 import { facilitatorsGuard } from './components/guards/facilitators.guard';
-import { ClassesComponent } from './classes/classes.component';
+import { ClassesComponent } from './components/classes/classes.component';
 
 const routes: Routes = [
   { path: 'testingStuff', component: TestPageComponent },

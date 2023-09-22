@@ -1,6 +1,6 @@
 
 
-<aside class="fixed top-0 left-0 w-44  h-screen  transition-transform shadow-2xl -translate-x-full lg:translate-x-0" [ngClass]="{ 'sm:translate-x-0': aside.isToggledAside, '-translate-x-full': !aside.isToggledAside }">
+<aside class="fixed top-0 left-0 w-44  h-screen shadow-2xl  transition-transform sm:-translate-x-full lg:translate-x-0 "  [ngClass]="{ 'translate-x-0 sm:-translate-x-full': !aside.isToggledAside, '': aside.isToggledAside }">
 
     
     <div class=" h-full px-3 py-4 overflow-y-auto bg-teal-100 dark:bg-teal-100">

@@ -16,8 +16,8 @@ import { AsideComponent } from './components/aside/aside.component';
 import { GreetingComponent } from './components/greeting/greeting.component';
 import { GradeComponent } from './components/grade/grade.component';
 import { AssigmentComponent } from './components/assigment/assigment.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { ClassesComponent } from './classes/classes.component';
+import { FooterComponent } from './footer/footer.component';
+import { ClassesComponent } from './components/classes/classes.component';
 import { FacilitatorHomeComponent } from './components/facilitator-home/facilitator-home.component';
 import { BoxComponent } from './components/box/box.component';
 
