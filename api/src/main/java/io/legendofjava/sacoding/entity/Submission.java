@@ -8,6 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import lombok.Data;
 
 //This assignment is the learner's (Student's) version of the assignment
@@ -29,6 +32,8 @@ public class Submission {
 
     private Integer grade;
 
+    @CreationTimestamp
+    @UpdateTimestamp
     private Date submittedDate;
 
 

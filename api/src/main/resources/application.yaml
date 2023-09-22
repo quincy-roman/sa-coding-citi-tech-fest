@@ -10,6 +10,9 @@ spring:
     hibernate:
       ddl-auto: update
       show-sql: true
+  jackson:
+    default-property-inclusion: NON_NULL
+    
 s3:
   bucket:
     name: bucket-hackathon-test-12983765123
