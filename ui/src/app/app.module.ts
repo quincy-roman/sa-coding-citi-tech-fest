@@ -5,11 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TestPageComponent } from './test-page/test-page.component';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AsideComponent } from './aside/aside.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestPageComponent
+    TestPageComponent,
+    NavbarComponent,
+    AsideComponent,
+    HomeComponent,
+
   ],
   imports: [
     BrowserModule,
