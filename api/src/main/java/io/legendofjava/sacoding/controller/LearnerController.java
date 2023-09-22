@@ -1,5 +1,6 @@
 package io.legendofjava.sacoding.controller;
 
+import io.legendofjava.sacoding.dto.SubmissionDTO;
 import io.legendofjava.sacoding.entity.Assignment;
 import io.legendofjava.sacoding.entity.Submission;
 import io.legendofjava.sacoding.s3.S3Service;
@@ -8,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.io.IOException;
 import java.util.Collection;
@@ -19,7 +21,6 @@ import java.util.Collection;
 public class LearnerController {
 
     private final LearnerService learnerService;
-
     private final S3Service s3Service;
 
     @GetMapping("/assignments")
@@ -33,6 +34,11 @@ public class LearnerController {
         log.info("Finding submissions for learner id: " + userId);
         Collection<Submission> submissionList= learnerService.getSubmissionsForLearner(userId);
         return ResponseEntity.ok(submissionList);
+    }
+
+    @PostMapping("/submissions")
+    public ResponseEntity<Submission> createSubmission(@RequestBody SubmissionDTO submissionDTO){
+        return ResponseEntity.ok(learnerService.createSubmission(submissionDTO));
     }
 
     @GetMapping("/getFileFromS3")
