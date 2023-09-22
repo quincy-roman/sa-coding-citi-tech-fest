@@ -19,6 +19,8 @@ CREATE TABLE IF NOT EXISTS sa_User (
 
 INSERT INTO sa_User (email, password, first_Name, last_Name, role, batch_Id) VALUES ('delaneylekien@gmail.com', '$2a$10$NKGJNqEGC93k0EFaBY87..qSHLyZ9L0F5t7j3uo9rDJC7jlzWgLn2', 'Delaney', 'Lekien', 'Admin', '123456');
 INSERT INTO sa_User (email, password, first_Name, last_Name, role, batch_Id) VALUES ('quincyromane@gmail.com', '$2a$10$NKGJNqEGC93k0EFaBY87..qSHLyZ9L0F5t7j3uo9rDJC7jlzWgLn2', 'Quincy', 'Roman', 'Admin', '123456');
+INSERT INTO sa_User (email, password, first_Name, last_Name, role, batch_Id) VALUES ('hvc@gmail.com', 'password', 'Harrison', 'Cooley', 'Admin', '123456');
+
 
 CREATE TABLE IF NOT EXISTS Assignment (
 	id SERIAL PRIMARY KEY,

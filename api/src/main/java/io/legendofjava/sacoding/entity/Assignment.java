@@ -2,13 +2,7 @@ package io.legendofjava.sacoding.entity;
 
 import java.sql.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import io.legendofjava.sacoding.Enum.AssignmentType;
 import lombok.Data;
@@ -29,10 +23,13 @@ public class Assignment {
     private String name;
     private Integer maxScore;
 
+    @Column(name="assignment_Type")
     @Enumerated(EnumType.STRING)
     private AssignmentType type;
+
     private Date dueDate;
 
+    @Column(name="s3_File_Path")
     private String s3FilePath;
 
     //Assignment
