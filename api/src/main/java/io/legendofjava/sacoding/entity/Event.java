@@ -22,7 +22,6 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String eventId;
 
-    private String assignmentId;
     private String batchId;
 
     private String name;
