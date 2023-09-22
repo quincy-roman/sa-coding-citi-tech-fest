@@ -9,7 +9,12 @@ import { Component } from '@angular/core';
 
 export class FooterComponent {
 
-  icons = [['https://img.icons8.com/ios/50/quiz.png', 'Quizzes'], ['https://img.icons8.com/ios/50/quiz.png', 'Assignments'], ]
+  icons = [['../../../assets/Web_App_Icons/icons8-quiz-50-light.png', 'Quizzes'], 
+    ['../../../assets/Web_App_Icons/icons8-assignment-50-light.png', 'Assigments'], 
+    ['../../../assets/Web_App_Icons/icons8-teacher-50-light.png', 'SC Chat'],
+    ['../../../assets/Web_App_Icons/icons8-calendar-50-light.png', 'Calendar'],
+    ['../../../assets/Web_App_Icons/icons8-assignment-50-light.png', 'Register']
+  ]
 
 
 }

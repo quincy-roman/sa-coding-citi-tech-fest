@@ -2,10 +2,16 @@
 <div style="margin: 10px 0;">
     <app-greeting [roleType]="'Facilitator'"></app-greeting>
 </div>
-<app-box [title]="'classes'"></app-box>
+<app-box [title]="'Classes'" [content]="classContent"></app-box>
 <br/>
-<app-box [title]="'assignments'" [content]="classContent"></app-box>
+<app-box [title]="'Assignments'" [content]="assignments"></app-box>
 <ng-template #classContent>
+    <app-table2 [headers]="['Class', 'Number of Students', 'Overall Grade']" [rows]="[['Class 101', '15', '82'], ['Class 102', '20', '78'], ['Class 103', '18', '85']]"></app-table2>
+</ng-template>
+<ng-template #assignments>
+    <p class="header">Due Soon</p><br/>
+    <app-table2 [headers]="['Class', 'Number of Students', 'Overall Grade']" [rows]="[['Class 101', '15', '82'], ['Class 102', '20', '78'], ['Class 103', '18', '85']]"></app-table2>
+    <br/><p class="header">Coming Up</p><br/>
     <app-table2 [headers]="['Class', 'Number of Students', 'Overall Grade']" [rows]="[['Class 101', '15', '82'], ['Class 102', '20', '78'], ['Class 103', '18', '85']]"></app-table2>
 </ng-template>
 <br/>

@@ -6,5 +6,5 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./facilitator-home.component.css']
 })
 export class FacilitatorHomeComponent {
-  @ViewChild('classContent') content! : ElementRef<any>;
+  @ViewChild('classContent') content! : ElementRef<any>
 }
