@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://sa-coding-hackathon.cluster-chur8opkdp9u.us-east-1.rds.amazonaws.com:5432/postgres
+    url: jdbc:postgresql://sa-coding.chur8opkdp9u.us-east-1.rds.amazonaws.com:5432/postgres
     username: legendofjava
     password: ${POSTGRES_SECRET}
   jpa:
