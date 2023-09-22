@@ -1,5 +1,4 @@
-import { Component, QueryList, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
-import { ElementRef } from 'react';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-facilitator-home',
@@ -7,5 +6,5 @@ import { ElementRef } from 'react';
   styleUrls: ['./facilitator-home.component.css']
 })
 export class FacilitatorHomeComponent {
-  @ViewChild('classContent') content : ElementRef<any>
+  @ViewChild('classContent') content! : ElementRef<any>;
 }

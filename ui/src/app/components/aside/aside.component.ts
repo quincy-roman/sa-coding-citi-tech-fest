@@ -12,14 +12,14 @@ export class AsideComponent implements OnInit {
     this.isNavbarOpen = aside.getToggleAside()
   }
 
-  items = [{img: 'https://img.icons8.com/ios/50/quiz.png', title: 'Quizzes', link: '/quizes'}, 
-          {img: 'https://img.icons8.com/ios/50/quiz.png', title: 'Assigments', link:'/assigments'}, 
-          {img: 'https://img.icons8.com/ios/50/quiz.png', title: 'Calendar', link: '/calendar'}, 
-          {img: 'https://img.icons8.com/ios/50/quiz.png', title: 'Material', link: '/materials'}, 
+  items = [{img: 'https://img.icons8.com/ios/50/quiz.png', title: 'Quizzes', link: '/quizzes'},
+          {img: 'https://img.icons8.com/ios/50/quiz.png', title: 'Assignments', link:'/assignments'},
+          {img: 'https://img.icons8.com/ios/50/quiz.png', title: 'Calendar', link: '/calendar'},
+          {img: 'https://img.icons8.com/ios/50/quiz.png', title: 'Material', link: '/materials'},
           {img: 'https://img.icons8.com/ios/50/quiz.png', title: 'SC CHAT', link: '/chat'}]
 
   ngOnInit(): void {}
-  
+
   toggleAside() {
     this.aside.setToggleAside(false);
   }

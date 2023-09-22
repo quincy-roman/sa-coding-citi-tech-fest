@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 
 export class FooterComponent {
 
-  icons = [['https://img.icons8.com/ios/50/quiz.png', 'Quizzes'], ['https://img.icons8.com/ios/50/quiz.png', 'Assigments'], ]
+  icons = [['https://img.icons8.com/ios/50/quiz.png', 'Quizzes'], ['https://img.icons8.com/ios/50/quiz.png', 'Assignments'], ]
 
 
 }
