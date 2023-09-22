@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://sa-coding.chur8opkdp9u.us-east-1.rds.amazonaws.com:5432/postgres
     username: legendofjava
-    password: ${POSTGRES_SECRET}
+    password: iamstillyourjava
   jpa:
     properties:
       hibernate:
