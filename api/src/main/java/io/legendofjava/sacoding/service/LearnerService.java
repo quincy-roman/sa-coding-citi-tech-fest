@@ -1,29 +1,27 @@
 package io.legendofjava.sacoding.service;
 
 import io.legendofjava.sacoding.entity.Assignment;
+import io.legendofjava.sacoding.entity.Submission;
 import io.legendofjava.sacoding.repository.AssignmentRepository;
-import io.legendofjava.sacoding.repository.BatchRepository;
-import io.legendofjava.sacoding.repository.UserRepository;
-import net.bytebuddy.implementation.bind.annotation.AllArguments;
-import org.hibernate.engine.jdbc.batch.spi.Batch;
-import org.springframework.beans.factory.annotation.Autowired;
+import io.legendofjava.sacoding.repository.SubmissionRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Collection;
 
+@AllArgsConstructor
 @Service
 public class LearnerService {
-    @Autowired
-    private UserRepository userRepository;
 
-    @Autowired
-    private AssignmentRepository assignmentRepository;
+    private final AssignmentRepository assignmentRepository;
 
-    @Autowired
-    private BatchRepository batchRepository;
+    private final SubmissionRepository submissionRepository;
 
-    public List<Assignment> getAssignmentsForStudent(String batchId){
+    public Collection<Assignment> getAssignmentsForStudent(String batchId){
         return assignmentRepository.findAllByBatchId(batchId);
+    }
+
+    public Collection<Submission> getSubmissionsForLearner(String userId) {
+        return submissionRepository.findAllByUserId(userId);
     }
 }

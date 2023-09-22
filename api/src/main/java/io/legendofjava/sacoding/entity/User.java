@@ -4,8 +4,6 @@ import io.legendofjava.sacoding.Enum.Role;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.Set;
 
 @Data
 @Entity
