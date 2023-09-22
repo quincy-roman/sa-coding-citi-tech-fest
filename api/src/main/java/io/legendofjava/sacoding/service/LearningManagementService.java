@@ -1,5 +1,6 @@
 package io.legendofjava.sacoding.service;
 
+import io.legendofjava.sacoding.dto.SubmissionDTO;
 import io.legendofjava.sacoding.entity.Assignment;
 import io.legendofjava.sacoding.entity.Batch;
 import io.legendofjava.sacoding.entity.Submission;
@@ -15,6 +16,8 @@ public interface LearningManagementService {
 
 	Collection<Submission> getSubmissionsForLearner(String userId);
 
+	Submission createSubmission(SubmissionDTO submissionDTO);
+
 	//Facilitator Service Methods
 	
 	Collection<Submission> getSubmissions(Collection<String> userIds);
@@ -23,4 +26,6 @@ public interface LearningManagementService {
 
 
 	Collection<UserRepository.UserDTO> getLearnersByBatchId(String batchId);
+
+	Submission setGrade(SubmissionDTO submissionDTO);
 }

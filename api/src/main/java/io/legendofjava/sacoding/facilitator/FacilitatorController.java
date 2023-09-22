@@ -1,14 +1,13 @@
 package io.legendofjava.sacoding.facilitator;
 
+import io.legendofjava.sacoding.dto.SubmissionDTO;
 import io.legendofjava.sacoding.entity.Batch;
+import io.legendofjava.sacoding.entity.Submission;
 import io.legendofjava.sacoding.repository.UserRepository;
 import io.legendofjava.sacoding.service.LearningManagementService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 import java.util.List;
@@ -33,6 +32,11 @@ public class FacilitatorController {
 	@GetMapping("/learnersInBatch")
 	public ResponseEntity<Collection<UserRepository.UserDTO>> getLearners(@RequestParam String batchId){
 		return ResponseEntity.ok(service.getLearnersByBatchId(batchId));
+	}
+
+	@PutMapping("/grades")
+	public ResponseEntity<Submission> setGrade(@RequestBody SubmissionDTO submissionDTO){
+		return ResponseEntity.ok(service.setGrade(submissionDTO));
 	}
 
 }
