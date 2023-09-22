@@ -1,8 +1,8 @@
 <nav class="">
-    <div class="rounded flex flex-row items-center justify-between space-x-4 bg-teal-500">
+    <div class="rounded flex flex-row items-center justify-between space-x-4 bg-[#03BAC0]">
   
       <div class=" lg:hidden w-24 h-24 p-4">
-          <button class="flex p-3 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white" (click)="toggleAside()">
+          <button class="flex p-3 border rounded text-teal-200 bg-[#03BAC0] hover:text-white hover:border-white" (click)="toggleAside()">
             <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
           </button>
       </div>
@@ -20,7 +20,7 @@
         
         </button>
               <!-- Dropdown menu -->
-              <div id="dropdownNavbar" class="z-10 absolute -translate-x-36 translate-y-2 font-normal shadow-2xl bg-teal-200 divide-y divide-gray-100 rounded-lg w-44 text-teal-200 dark:divide-teal-600" [ngClass]="{ 'block': toggleAccount, 'hidden': !toggleAccount }">
+              <div id="dropdownNavbar" class="z-10 absolute -translate-x-36 translate-y-2 font-normal shadow-2xl bg-[#DEF0F0] divide-y divide-gray-100 rounded-lg w-44 text-teal-200 dark:divide-teal-600" [ngClass]="{ 'block': toggleAccount, 'hidden': !toggleAccount }">
                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                   <li>
                     <a href="#" class="block px-4 py-2 hover:bg-teal-600 dark:hover:text-white">Dashboard</a>
@@ -33,7 +33,7 @@
                   </li>
                 </ul>
                 <div class="py-1">
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:teal-600 dark:text-gray-400 dark:hover:text-white">Sign out</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:teal-600 dark:text-gray-400 dark:hover:text-gray-800">Sign out</a>
                 </div>
             </div>
       </div>

@@ -34,7 +34,7 @@ export interface PushNoteCallback {
 }
 
 // for the registration endpoint
-export interface RegisterationInfo {
+export interface RegistrationInfo {
   firstName: string;
   lastName: string;
   email: string;

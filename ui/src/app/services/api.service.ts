@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { RegisterationInfo } from '../interfaces/types';
 
 /** SUPER WIP, WAITING ON FINALIZED ENDPOINTS */
 declare var API_URL: string;
@@ -64,7 +63,7 @@ export class ApiService {
 
   /** Get Assignments specific to the individual ID */
   getAssignments = (learnerId: string) => {
-    return this.client.get(`${this.apiUrl}/submitFile`, {
+    return this.client.get(`${this.learnerUrl}/submitFile`, {
       params: { id: learnerId },
     });
   };

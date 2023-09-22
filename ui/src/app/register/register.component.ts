@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisterationInfo } from 'src/app/interfaces/types';
+import { RegistrationInfo } from 'src/app/interfaces/types';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  userInfo: RegisterationInfo = {
+  userInfo: RegistrationInfo = {
     firstName: '',
     lastName: '',
     email: '',

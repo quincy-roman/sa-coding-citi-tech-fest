@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-grade',
-  templateUrl: './grade.component.html',
-  styleUrls: ['./grade.component.css']
+  selector: 'app-materials',
+  templateUrl: './materials.component.html',
+  styleUrls: ['./materials.component.css']
 })
-export class GradeComponent {
+export class MaterialsComponent {
   tableHeaders: string[] = ['Column 1', 'Column 2', 'Column 3'];
   tableRows: string[][] = [
     ['Row 1, Cell 1', 'Row 1, Cell 2', 'Row 1, Cell 3'],

@@ -12,11 +12,11 @@ export class AsideComponent implements OnInit {
     this.isNavbarOpen = aside.getToggleAside()
   }
 
-  items = [{img: 'https://img.icons8.com/ios/50/quiz.png', title: 'Quizzes', link: '/quizzes'},
-          {img: 'https://img.icons8.com/ios/50/quiz.png', title: 'Assignments', link:'/assignments'},
-          {img: 'https://img.icons8.com/ios/50/quiz.png', title: 'Calendar', link: '/calendar'},
-          {img: 'https://img.icons8.com/ios/50/quiz.png', title: 'Material', link: '/materials'},
-          {img: 'https://img.icons8.com/ios/50/quiz.png', title: 'SC CHAT', link: '/chat'}]
+  items = [{img: '../../../assets/Web_App_Icons/icons8-quiz-50.png', title: 'Quizzes', link: '/quizzes'},
+          {img: '../../../assets/Web_App_Icons/icons8-assignment-50.png', title: 'Assignments', link:'/assigment'},
+          {img: '../../../assets/Web_App_Icons/icons8-calendar-50.png', title: 'Calendar', link: '/calendar'},
+          {img: '../../../assets/Web_App_Icons/icons8-teacher-50.png', title: 'SC CHAT', link: '/chat'},
+          {img: '../../../assets/Web_App_Icons/icons8-materials-50.png', title: 'Materials', link: '/materials'}]
 
   ngOnInit(): void {}
 

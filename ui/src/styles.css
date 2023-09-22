@@ -13,6 +13,7 @@
 
 html,body{
     height: 100%;
+    @apply bg-[#DEF0F0];
 }
 
 .header{

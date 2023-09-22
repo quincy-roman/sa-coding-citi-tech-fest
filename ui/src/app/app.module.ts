@@ -28,6 +28,8 @@ import { MainComponent } from './components/main/main.component';
 import { UploadComponent } from './components/upload/upload.component';
 import { Table2Component } from './components/table2/table2.component';
 import { CredentialsService } from './services/credentials.service';
+import { AssigmentsComponent } from './assigments/assigments.component';
+import { MaterialsComponent } from './materials/materials.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { CredentialsService } from './services/credentials.service';
     MainComponent,
     UploadComponent,
     Table2Component,
+    AssigmentsComponent,
+    MaterialsComponent,
 
   ],
   imports: [

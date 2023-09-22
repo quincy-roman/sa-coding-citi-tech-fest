@@ -10,6 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ScChatComponent } from './sc-chat/sc-chat.component';
 import { TestPageComponent } from './test-page/test-page.component';
+import { AssigmentsComponent } from './assigments/assigments.component';
+import { MaterialsComponent } from './materials/materials.component';
 
 const routes: Routes = [
   { path: 'testingStuff', component: TestPageComponent },
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path: 'classes', component: ClassesComponent },
   { path: 'calendar', component: CalendarComponent },
   { path: 'chat', component: ScChatComponent },
+  { path: 'assigmentss', component: AssigmentsComponent },
+  { path: 'materials', component: MaterialsComponent },
   {
     path: 'facilitator-home',
     component: FacilitatorHomeComponent,
