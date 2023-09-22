@@ -3,6 +3,7 @@ package io.legendofjava.sacoding.service;
 import io.legendofjava.sacoding.entity.Assignment;
 import io.legendofjava.sacoding.entity.Batch;
 import io.legendofjava.sacoding.entity.Submission;
+import io.legendofjava.sacoding.repository.UserRepository;
 
 import java.util.Collection;
 
@@ -21,5 +22,5 @@ public interface LearningManagementService {
 	Collection<Batch> getBatches(String facilitatorId);
 
 
-
+	Collection<UserRepository.UserDTO> getLearnersByBatchId(String batchId);
 }
