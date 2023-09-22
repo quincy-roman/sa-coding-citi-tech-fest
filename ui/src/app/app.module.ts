@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TestPageComponent } from './test-page/test-page.component';
 import { RegisterComponent } from './register/register.component';
@@ -27,6 +27,7 @@ import { Box2Component } from './components/box2/box2.component';
 import { MainComponent } from './components/main/main.component';
 import { UploadComponent } from './components/upload/upload.component';
 import { Table2Component } from './components/table2/table2.component';
+import { CredentialsService } from './services/credentials.service';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,7 @@ import { Table2Component } from './components/table2/table2.component';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [],
+  providers: [CredentialsService, {provide: HTTP_INTERCEPTORS, useClass: CredentialsService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
