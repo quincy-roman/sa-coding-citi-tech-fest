@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import lombok.Data;
+import io.legendofjava.sacoding.auth.dto.LoginRequest;
+import io.legendofjava.sacoding.auth.dto.RegisterRequest;
+import io.legendofjava.sacoding.auth.dto.Verification;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -58,21 +60,11 @@ public class AuthController {
 				.build();
 	}
 	
+	@PostMapping("/verify")
+	public ResponseEntity<Object> verify(@RequestBody Verification verification) {
+		return userService.verifyNewUser(verification) ? ResponseEntity.ok().build() : ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+	}
+	
 	@PostMapping("/logout")
 	public void logout() {}
-}
-
-@Data
-class LoginRequest {
-	private String username;
-	private String password;
-}
-
-@Data
-class RegisterRequest {
-	private String firstName;
-	private String lastName;
-	private String email;
-	private String password;
-	private String reEnterPassword;
 }

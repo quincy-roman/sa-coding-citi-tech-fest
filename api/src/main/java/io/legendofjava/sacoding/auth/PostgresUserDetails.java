@@ -1,6 +1,8 @@
 package io.legendofjava.sacoding.auth;
 
+import java.time.Instant;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,6 +16,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import io.legendofjava.sacoding.Enum.Role;
+import io.legendofjava.sacoding.auth.dto.RegisterRequest;
+import io.legendofjava.sacoding.auth.dto.Verification;
+import io.legendofjava.sacoding.auth.event.RegistrationRepository;
+import io.legendofjava.sacoding.auth.event.RegistrationToken;
 import io.legendofjava.sacoding.entity.SAUser;
 import io.legendofjava.sacoding.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +32,7 @@ public class PostgresUserDetails implements UserDetailsService {
 
 	private final UserRepository repo;
 	private final PasswordEncoder encoder;
+	private final RegistrationRepository registrationRepo;
 
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
@@ -55,9 +62,6 @@ public class PostgresUserDetails implements UserDetailsService {
 		if (potentialUser.isPresent())
 			throw new RuntimeException("User " + req.getEmail() + " already exists");
 
-		if (!req.getPassword().equals(req.getReEnterPassword()))
-			throw new UserAlreadyExistsException("Passwords do not match!");
-
 		var hashedPass = encoder.encode(req.getPassword());
 		SAUser newUser = new SAUser();
 		newUser.setEmail(req.getEmail());
@@ -68,6 +72,29 @@ public class PostgresUserDetails implements UserDetailsService {
 
 		SAUser user = repo.save(newUser);
 		return user.getId();
+	}
+	
+	public boolean verifyNewUser(Verification verification) {
+		log.debug("Trying to verify <{}>", verification.getEmail());
+		var registration = registrationRepo.findById(verification.getEmail());
+		
+		if(registration.isPresent()) {
+			RegistrationToken r = registration.get();
+			var token = r.getToken();
+			var expiry = r.getExpiryDate();
+			
+			if(expiry.after(Date.from(Instant.now())) && token.equals(verification.getToken())) {
+				Optional<SAUser> user = repo.findByEmail(verification.getEmail());
+				user.ifPresent(u -> {
+					u.setRole(Role.UNASSIGNED);
+					repo.save(u);
+					registrationRepo.delete(r);
+				});
+				return true;
+			}
+		}
+		
+		return false;
 	}
 
 }
