@@ -22,7 +22,7 @@ export interface Batch {
   facilitatorId: string;
 }
 
-export interface Event {
+export interface CalEvent {
   eventId: string;
   batchId: string;
   name: string;
