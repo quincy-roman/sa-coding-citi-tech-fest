@@ -38,6 +38,7 @@ public class LearnerService implements LearningManagementService {
         return submissionRepository.findByUserId(userId);
     }
 
+    @Override
     public Submission createSubmission(SubmissionDTO submissionDTO){
 
         Submission submission = new Submission(submissionDTO.getId(), submissionDTO.getUserId(), submissionDTO.getAssignmentId(),
@@ -63,6 +64,7 @@ public class LearnerService implements LearningManagementService {
         return userRepository.findByBatchId(batchId);
     }
 
+    @Override
     public Submission setGrade(SubmissionDTO submissionDTO){
 
         Optional<Submission> submissionOptional = submissionRepository.findById(submissionDTO.getId());
