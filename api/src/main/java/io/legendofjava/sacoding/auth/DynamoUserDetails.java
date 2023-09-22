@@ -13,8 +13,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import io.legendofjava.sacoding.dynamo.SAUser;
-import io.legendofjava.sacoding.dynamo.UserRepository;
+import io.legendofjava.sacoding.Enum.Role;
+import io.legendofjava.sacoding.entity.SAUser;
+import io.legendofjava.sacoding.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -55,7 +56,13 @@ public class DynamoUserDetails implements UserDetailsService {
 			throw new RuntimeException("User " + req.getUsername() + " already exists");
 
 		var hashedPass = encoder.encode(req.getPassword());
-		SAUser user = repo.save(new SAUser(req.getUsername(), hashedPass, Role.UNASSIGNED));
+//		SAUser user = repo.save(new SAUser(req.getUsername(), hashedPass, Role.UNASSIGNED));
+		SAUser newUser = new SAUser();
+		newUser.setEmail(req.getUsername());
+		newUser.setPassword(hashedPass);
+		newUser.setRole(Role.UNVERIFIED);
+		
+		SAUser user = repo.save(newUser);
 		return user.getId();
 	}
 

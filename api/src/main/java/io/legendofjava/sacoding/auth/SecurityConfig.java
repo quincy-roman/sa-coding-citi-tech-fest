@@ -19,6 +19,8 @@ import org.springframework.security.web.context.SecurityContextRepository;
 import org.springframework.security.web.header.writers.ClearSiteDataHeaderWriter;
 import org.springframework.security.web.header.writers.ClearSiteDataHeaderWriter.Directive;
 
+import io.legendofjava.sacoding.Enum.Role;
+
 @Configuration
 @EnableMethodSecurity
 public class SecurityConfig {
