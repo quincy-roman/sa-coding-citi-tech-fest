@@ -15,7 +15,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AsideComponent } from './components/aside/aside.component';
 import { GreetingComponent } from './components/greeting/greeting.component';
 import { GradeComponent } from './components/grade/grade.component';
-import { AssigmentComponent } from './components/assigment/assigment.component';
+import { AssignmentComponent } from './components/assignment/assignment.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ClassesComponent } from './classes/classes.component';
 import { FacilitatorHomeComponent } from './components/facilitator-home/facilitator-home.component';
@@ -40,7 +40,7 @@ import { Table2Component } from './components/table2/table2.component';
     HomeComponent,
     GreetingComponent,
     GradeComponent,
-    AssigmentComponent,
+    AssignmentComponent,
     FooterComponent,
     ClassesComponent,
     FacilitatorHomeComponent,

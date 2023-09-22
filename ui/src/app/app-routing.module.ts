@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TestPageComponent } from './test-page/test-page.component';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { InProgressComponent } from './in-progress/in-progress.component';
-import { HomeComponent } from './home/home.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { ClassesComponent } from './classes/classes.component';
 import { FacilitatorHomeComponent } from './components/facilitator-home/facilitator-home.component';
 import { facilitatorsGuard } from './components/guards/facilitators.guard';
-import { ClassesComponent } from './classes/classes.component';
-import { CalendarComponent } from './calendar/calendar.component';
+import { HomeComponent } from './home/home.component';
+import { InProgressComponent } from './in-progress/in-progress.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 import { ScChatComponent } from './sc-chat/sc-chat.component';
+import { TestPageComponent } from './test-page/test-page.component';
 
 const routes: Routes = [
   { path: 'testingStuff', component: TestPageComponent },
@@ -22,8 +21,16 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'classes', component: ClassesComponent },
   { path: 'calendar', component: CalendarComponent },
-  { path: 'chat', component: ScChatComponent},
-  {path: 'facilitator-home', component: FacilitatorHomeComponent, canActivate: [facilitatorsGuard]}
+  { path: 'chat', component: ScChatComponent },
+  {
+    path: 'facilitator-home',
+    component: FacilitatorHomeComponent,
+    canActivate: [facilitatorsGuard],
+  },
+
+  /** Keep these 2 routes LAST to redirect all unknown routes. */
+  { path: '404NotFound', component: InProgressComponent },
+  { path: '**', redirectTo: '/notFound' },
 ];
 
 @NgModule({
