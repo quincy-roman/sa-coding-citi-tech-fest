@@ -13,6 +13,7 @@ import { TestPageComponent } from './test-page/test-page.component';
 import { AssigmentsComponent } from './assigments/assigments.component';
 import { MaterialsComponent } from './materials/materials.component';
 import { FacilitatorEventsComponent } from './components/facilitator-events/facilitator-events.component';
+import { QuizzesComponent } from './quizzes/quizzes.component';
 
 const routes: Routes = [
   { path: 'testingStuff', component: TestPageComponent },
@@ -25,8 +26,9 @@ const routes: Routes = [
   { path: 'classes', component: ClassesComponent },
   { path: 'calendar', component: CalendarComponent },
   { path: 'chat', component: ScChatComponent },
-  { path: 'assigmentss', component: AssigmentsComponent },
+  { path: 'assignments', component: AssigmentsComponent },
   { path: 'materials', component: MaterialsComponent },
+  { path: 'quizzes', component: QuizzesComponent },
   {
     path: 'facilitator-home',
     component: FacilitatorHomeComponent,

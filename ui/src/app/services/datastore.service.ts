@@ -24,4 +24,8 @@ export class DatastoreService {
   /** All Users */
   public events: CalEvent[] = [];
   // combines events and Assignments
+
+  public dataFormat(array: any[]) {
+  //  array.map(row => )
+  }
 }
