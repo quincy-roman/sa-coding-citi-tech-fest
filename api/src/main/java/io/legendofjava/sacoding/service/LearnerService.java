@@ -20,10 +20,18 @@ public class LearnerService implements LearningManagementService {
 
     private final SubmissionRepository submissionRepository;
 
+
+    //Learners:
     public Collection<Assignment> getAssignmentsForStudent(String batchId){
         return assignmentRepository.findAllByBatchId(batchId);
     }
 
+    public Collection<Submission> getSubmissionsForLearner(String userId) {
+        return submissionRepository.findByUserId(userId);
+    }
+
+
+    //Facilitators:
     public Collection<Batch> getBatches(String facilitatorId) {
         return batchRepository.findByFacilitatorId(facilitatorId);
     }
@@ -33,7 +41,5 @@ public class LearnerService implements LearningManagementService {
         return null;
     }
 
-    public Collection<Submission> getSubmissionsForLearner(String userId) {
-        return submissionRepository.findByUserId(userId);
-    }
+
 }
