@@ -4,6 +4,9 @@
 </div>
 <app-box [title]="'classes'"></app-box>
 <br/>
-<app-box [title]="'assignments'"></app-box>
+<app-box [title]="'assignments'" [content]="classContent"></app-box>
+<ng-template #classContent>
+    <app-table2 [headers]="['Class', 'Number of Students', 'Overall Grade']" [rows]="[['Class 101', '15', '82'], ['Class 102', '20', '78'], ['Class 103', '18', '85']]"></app-table2>
+</ng-template>
 <br/>
 <app-footer></app-footer>
