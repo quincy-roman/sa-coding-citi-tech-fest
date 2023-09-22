@@ -30,7 +30,7 @@ const routes: Routes = [
 
   /** Keep these 2 routes LAST to redirect all unknown routes. */
   { path: '404NotFound', component: InProgressComponent },
-  { path: '**', redirectTo: '/notFound' },
+  { path: '**', redirectTo: '/404NotFound' },
 ];
 
 @NgModule({
