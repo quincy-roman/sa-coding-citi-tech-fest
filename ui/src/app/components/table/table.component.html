@@ -1,17 +1,17 @@
-<div class="bg-teal-50 overflow-hidden">
+<div class="bg-teal-50 overflow-hidden p-">
     <table class="min-w-full">
       <thead>
         <tr >
           <ng-container *ngFor="let header of headers">
-            <th class="px-4 py-2">{{ header }}</th>
+            <th class="px-16 py-2 text-left text-sm">{{ header }}</th>
           </ng-container>
         </tr>
       </thead>
       <tbody>
         <ng-container *ngFor="let row of rows; let i = index">
-          <tr class="even:bg-teal-100 odd:bg-teal-200">
-            <ng-container *ngFor="let cell of row; let j = index">
-              <td class=" px-4 py-2">{{ cell }}</td>
+          <tr class="even:bg-teal-100 odd:bg-teal-200 ">
+            <ng-container *ngFor="let cell of row; let j = index" >
+              <td class=" px-4 py-2 text-center">{{ cell }}</td>
             </ng-container>
           </tr>
         </ng-container>

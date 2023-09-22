@@ -24,6 +24,8 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { ScChatComponent } from './sc-chat/sc-chat.component';
 import { TableComponent } from './components/table/table.component';
 import { Box2Component } from './components/box2/box2.component';
+import { MainComponent } from './components/main/main.component';
+import { UploadComponent } from './components/upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { Box2Component } from './components/box2/box2.component';
     ScChatComponent,
     TableComponent,
     Box2Component,
+    MainComponent,
+    UploadComponent,
 
   ],
   imports: [
