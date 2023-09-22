@@ -4,6 +4,7 @@ import io.legendofjava.sacoding.dto.SubmissionDTO;
 import io.legendofjava.sacoding.entity.Batch;
 import io.legendofjava.sacoding.entity.Submission;
 import io.legendofjava.sacoding.repository.UserRepository;
+import io.legendofjava.sacoding.s3.S3Service;
 import io.legendofjava.sacoding.service.LearningManagementService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,8 @@ import java.util.List;
 public class FacilitatorController {
 	
 	private final LearningManagementService service;
+
+	private final S3Service s3Service;
 	
 	@GetMapping("/batches")
 	public ResponseEntity<Collection<Batch>> getBatches(@RequestParam String facilitatorId) {
