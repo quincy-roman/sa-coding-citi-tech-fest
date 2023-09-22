@@ -31,7 +31,7 @@ server:
       
 logging:
   level:
-    io.loj.hackathon: ${LOG_LEVEL:INFO}
+    io.legendofjava.sacoding: ${LOG_LEVEL:INFO}
     
 s3:
   bucket:
