@@ -27,6 +27,8 @@ import { Box2Component } from './components/box2/box2.component';
 import { MainComponent } from './components/main/main.component';
 import { UploadComponent } from './components/upload/upload.component';
 import { Table2Component } from './components/table2/table2.component';
+import { AssigmentsComponent } from './assigments/assigments.component';
+import { MaterialsComponent } from './materials/materials.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { Table2Component } from './components/table2/table2.component';
     MainComponent,
     UploadComponent,
     Table2Component,
+    AssigmentsComponent,
+    MaterialsComponent,
 
   ],
   imports: [
