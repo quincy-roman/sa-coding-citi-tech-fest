@@ -22,7 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class DynamoUserDetails implements UserDetailsService {
+public class PostgresUserDetails implements UserDetailsService {
 
 	private final UserRepository repo;
 	private final PasswordEncoder encoder;
@@ -56,7 +56,7 @@ public class DynamoUserDetails implements UserDetailsService {
 			throw new RuntimeException("User " + req.getEmail() + " already exists");
 
 		if (!req.getPassword().equals(req.getReEnterPassword()))
-			throw new RuntimeException("Passwords do not match!");
+			throw new UserAlreadyExistsException("Passwords do not match!");
 
 		var hashedPass = encoder.encode(req.getPassword());
 		SAUser newUser = new SAUser();

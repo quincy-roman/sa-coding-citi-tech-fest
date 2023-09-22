@@ -27,7 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class AuthController {
 	
-	private final DynamoUserDetails userService;
+	private final PostgresUserDetails userService;
 	private final AuthenticationManager authManager;
 	
 	private final SecurityContextRepository securityContextRepo;
