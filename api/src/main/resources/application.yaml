@@ -35,4 +35,4 @@ logging:
     
 s3:
   bucket:
-    name: bucket-hackathon-test-12983765123
+    name: ${BUCKET_NAME}
