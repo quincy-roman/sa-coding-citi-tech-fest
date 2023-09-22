@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { RegisterationInfo } from '../interfaces/types';
 
 /** SUPER WIP, WAITING ON FINALIZED ENDPOINTS */
 declare var API_URL: string;

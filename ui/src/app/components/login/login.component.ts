@@ -14,7 +14,6 @@ export class LoginComponent implements OnInit {
   constructor(private api: ApiService){}
 
   ngOnInit(): void {
-    sessionStorage.setItem('role', 'admin');
   }
 
   login(){
