@@ -12,6 +12,7 @@ import { ScChatComponent } from './sc-chat/sc-chat.component';
 import { TestPageComponent } from './test-page/test-page.component';
 import { AssigmentsComponent } from './assigments/assigments.component';
 import { MaterialsComponent } from './materials/materials.component';
+import { FacilitatorEventsComponent } from './components/facilitator-events/facilitator-events.component';
 import { QuizzesComponent } from './quizzes/quizzes.component';
 
 const routes: Routes = [
@@ -31,6 +32,11 @@ const routes: Routes = [
   {
     path: 'facilitator-home',
     component: FacilitatorHomeComponent,
+    canActivate: [facilitatorsGuard],
+  },
+  {
+    path: 'facilitator-events',
+    component: FacilitatorEventsComponent,
     canActivate: [facilitatorsGuard],
   },
 

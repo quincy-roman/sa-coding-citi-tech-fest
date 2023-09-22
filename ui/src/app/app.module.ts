@@ -30,6 +30,7 @@ import { Table2Component } from './components/table2/table2.component';
 import { CredentialsService } from './services/credentials.service';
 import { AssigmentsComponent } from './assigments/assigments.component';
 import { MaterialsComponent } from './materials/materials.component';
+import { FacilitatorEventsComponent } from './components/facilitator-events/facilitator-events.component';
 import { QuizzesComponent } from './quizzes/quizzes.component';
 
 @NgModule({
@@ -58,6 +59,7 @@ import { QuizzesComponent } from './quizzes/quizzes.component';
     Table2Component,
     AssigmentsComponent,
     MaterialsComponent,
+    FacilitatorEventsComponent,
     QuizzesComponent,
 
   ],
