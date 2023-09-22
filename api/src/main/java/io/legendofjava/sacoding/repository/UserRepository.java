@@ -1,11 +1,11 @@
 package io.legendofjava.sacoding.repository;
 
-import java.util.List;
-import java.util.Optional;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import io.legendofjava.sacoding.entity.SAUser;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.beans.factory.annotation.Value;
+
+import java.util.Optional;
+import java.util.Set;
 
 public interface UserRepository extends JpaRepository<SAUser, String> {
 

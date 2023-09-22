@@ -2,7 +2,7 @@ package io.legendofjava.sacoding.dto;
 
 import lombok.Data;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Data
 public class SubmissionDTO {
