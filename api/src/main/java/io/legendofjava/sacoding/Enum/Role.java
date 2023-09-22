@@ -2,7 +2,7 @@ package io.legendofjava.sacoding.Enum;
 
 public enum Role {
 
-    ADMIN, FACILITATOR, LEARNER, UNASSIGNED;
+    ADMIN, FACILITATOR, LEARNER, UNASSIGNED, UNVERIFIED;
 
     private String role;
 
