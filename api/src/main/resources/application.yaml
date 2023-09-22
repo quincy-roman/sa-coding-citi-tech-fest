@@ -35,6 +35,5 @@ logging:
     
 s3:
   bucket:
-    name: bucket-hackathon-test-12983765123
-    accessKey:
-    secretKey:
+    name: ${BUCKET_NAME}
+
