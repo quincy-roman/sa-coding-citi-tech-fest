@@ -8,11 +8,11 @@ import { Observable } from 'rxjs';
 export class CredentialsService implements HttpInterceptor { 
     
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-  
-    request = request.clone({
-      withCredentials: true
-    });
-  
+    if(!request.url.includes('login') && !request.url.includes('register') && !request.url.includes('verify')){
+      request = request.clone({
+        withCredentials: true
+      });
+    }
     return next.handle(request);
   }
 }
