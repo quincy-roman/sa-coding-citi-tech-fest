@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TestPageComponent } from './test-page/test-page.component';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 import { InProgressComponent } from './in-progress/in-progress.component';
 import { HomeComponent } from './home/home.component';
 import { FacilitatorHomeComponent } from './components/facilitator-home/facilitator-home.component';
 import { facilitatorsGuard } from './components/guards/facilitators.guard';
-import { ClassesComponent } from './components/classes/classes.component';
+import { ClassesComponent } from './classes/classes.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { ScChatComponent } from './sc-chat/sc-chat.component';
 
 const routes: Routes = [
   { path: 'testingStuff', component: TestPageComponent },
@@ -19,6 +21,8 @@ const routes: Routes = [
   { path: 'wip', component: InProgressComponent },
   { path: 'home', component: HomeComponent },
   { path: 'classes', component: ClassesComponent },
+  { path: 'calendar', component: CalendarComponent },
+  { path: 'chat', component: ScChatComponent},
   {path: 'facilitator-home', component: FacilitatorHomeComponent, canActivate: [facilitatorsGuard]}
 ];
 

@@ -1,9 +1,10 @@
-
 <app-aside></app-aside>
 <div class="lg:ml-48 m-2 flex flex-col space-y-2 items-stretch justify-center">
     <app-navbar></app-navbar>
-    <app-greeting></app-greeting>
-    <app-grade></app-grade>
-    <app-assigment></app-assigment>
-    <app-footer></app-footer> 
+    <app-box2 [title]="classes">
+    
+    
+    <app-table [headers]="tableHeaders" [rows]="tableRows"></app-table>
+
+</app-box2>
 </div>

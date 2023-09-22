@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TestPageComponent } from './test-page/test-page.component';
-import { RegisterComponent } from './components/register/register.component';
+import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { InProgressComponent } from './in-progress/in-progress.component';
 import { HomeComponent } from './home/home.component';
@@ -16,10 +16,14 @@ import { AsideComponent } from './components/aside/aside.component';
 import { GreetingComponent } from './components/greeting/greeting.component';
 import { GradeComponent } from './components/grade/grade.component';
 import { AssigmentComponent } from './components/assigment/assigment.component';
-import { FooterComponent } from './footer/footer.component';
-import { ClassesComponent } from './components/classes/classes.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ClassesComponent } from './classes/classes.component';
 import { FacilitatorHomeComponent } from './components/facilitator-home/facilitator-home.component';
 import { BoxComponent } from './components/box/box.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { ScChatComponent } from './sc-chat/sc-chat.component';
+import { TableComponent } from './components/table/table.component';
+import { Box2Component } from './components/box2/box2.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +42,10 @@ import { BoxComponent } from './components/box/box.component';
     ClassesComponent,
     FacilitatorHomeComponent,
     BoxComponent,
+    CalendarComponent,
+    ScChatComponent,
+    TableComponent,
+    Box2Component,
 
   ],
   imports: [
