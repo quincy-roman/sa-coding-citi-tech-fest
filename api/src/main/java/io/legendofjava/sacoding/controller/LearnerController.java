@@ -3,12 +3,17 @@ package io.legendofjava.sacoding.controller;
 import io.legendofjava.sacoding.dto.SubmissionDTO;
 import io.legendofjava.sacoding.entity.Assignment;
 import io.legendofjava.sacoding.entity.Submission;
+import io.legendofjava.sacoding.s3.S3Service;
 import io.legendofjava.sacoding.service.LearnerService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.Collection;
 
 @Slf4j
@@ -35,6 +40,18 @@ public class LearnerController {
     @PostMapping("/submissions")
     public ResponseEntity<Submission> createSubmission(@RequestBody SubmissionDTO submissionDTO){
         return ResponseEntity.ok(learnerService.createSubmission(submissionDTO));
+    }
+
+    @GetMapping("/getFileFromS3")
+    public ResponseEntity<String> getFileFromS3(@RequestParam String fileName) throws IOException {
+        s3Service.downloadFileFromS3(fileName);
+        return ResponseEntity.ok(fileName);
+    }
+
+    @PostMapping("uploadFileToS3")
+    public ResponseEntity<String> uploadFileToS3(@RequestParam String fileName){
+        s3Service.uploadFileToS3(fileName);
+        return ResponseEntity.ok(fileName);
     }
 
 }

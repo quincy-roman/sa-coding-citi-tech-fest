@@ -1,19 +1,20 @@
 package io.legendofjava.sacoding.service;
 
+import java.util.Collection;
+import java.util.Optional;
+
 import io.legendofjava.sacoding.dto.SubmissionDTO;
+import io.legendofjava.sacoding.repository.UserRepository;
+import org.springframework.stereotype.Service;
+
 import io.legendofjava.sacoding.entity.Assignment;
 import io.legendofjava.sacoding.entity.Batch;
 import io.legendofjava.sacoding.entity.Submission;
 import io.legendofjava.sacoding.repository.AssignmentRepository;
 import io.legendofjava.sacoding.repository.BatchRepository;
 import io.legendofjava.sacoding.repository.SubmissionRepository;
-import io.legendofjava.sacoding.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-
-import java.util.Collection;
-import java.util.Optional;
 
 @Slf4j
 @Service
@@ -56,7 +57,7 @@ public class LearnerService implements LearningManagementService {
 
     @Override
     public Collection<Submission> getSubmissions(Collection<String> userIds) {
-        return null;
+        return submissionRepository.findAllById(userIds);
     }
 
     @Override
@@ -85,6 +86,4 @@ public class LearnerService implements LearningManagementService {
 
 
     }
-
-
 }
