@@ -2,7 +2,7 @@ package io.legendofjava.sacoding.Enum;
 
 public enum AssignmentType {
 
-    QUIZ, ASSEMSMENT, PRACTICAL;
+    QUIZ, ASSESSMENT, PRACTICAL;
 
     private String assignmentType;
 

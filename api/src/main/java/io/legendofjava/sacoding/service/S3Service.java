@@ -1,6 +1,5 @@
 package io.legendofjava.sacoding.service;
 
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 @Component

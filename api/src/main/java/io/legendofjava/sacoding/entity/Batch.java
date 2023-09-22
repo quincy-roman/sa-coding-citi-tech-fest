@@ -1,9 +1,11 @@
 package io.legendofjava.sacoding.entity;
 
-import lombok.Data;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
-import javax.persistence.*;
-import java.util.Set;
+import lombok.Data;
 
 @Entity
 @Data
