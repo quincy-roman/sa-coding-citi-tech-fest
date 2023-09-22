@@ -22,15 +22,18 @@ public class LearnerService implements LearningManagementService {
 
     private final AssignmentRepository assignmentRepository;
     private final BatchRepository batchRepository;
+
     private final SubmissionRepository submissionRepository;
     private final UserRepository userRepository;
 
 
     //Learners:
+    @Override
     public Collection<Assignment> getAssignmentsForStudent(String batchId){
         return assignmentRepository.findAllByBatchId(batchId);
     }
 
+    @Override
     public Collection<Submission> getSubmissionsForLearner(String userId) {
         return submissionRepository.findByUserId(userId);
     }
@@ -45,6 +48,7 @@ public class LearnerService implements LearningManagementService {
 
 
     //Facilitators:
+    @Override
     public Collection<Batch> getBatches(String facilitatorId) {
         return batchRepository.findByFacilitatorId(facilitatorId);
     }
@@ -54,6 +58,7 @@ public class LearnerService implements LearningManagementService {
         return null;
     }
 
+    @Override
     public Collection<UserRepository.UserDTO> getLearnersByBatchId(String batchId){
         return userRepository.findByBatchId(batchId);
     }

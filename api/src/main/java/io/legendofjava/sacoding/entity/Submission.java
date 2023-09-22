@@ -1,22 +1,32 @@
 package io.legendofjava.sacoding.entity;
 
-import lombok.AllArgsConstructor;
+import java.sql.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import lombok.Data;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-import java.util.Date;
 
 //This assignment is the learner's (Student's) version of the assignment
 
-@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
+@Table(name = "SUBMISSION")
 public class Submission {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     private String userId;
@@ -27,5 +37,9 @@ public class Submission {
 
     private Integer grade;
 
+    @CreationTimestamp
+    @UpdateTimestamp
     private Date submittedDate;
+
+
 }

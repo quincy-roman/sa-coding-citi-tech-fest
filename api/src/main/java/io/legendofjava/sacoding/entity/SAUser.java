@@ -7,10 +7,11 @@ import javax.persistence.*;
 
 @Data
 @Entity
-public class User {
+@Table(name = "SA_USER")
+public class SAUser {
 
     @Id
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     private String email;

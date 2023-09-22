@@ -1,12 +1,15 @@
 package io.legendofjava.sacoding.repository;
 
-import org.springframework.beans.factory.annotation.Value;
-import io.legendofjava.sacoding.entity.User;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Set;
+import io.legendofjava.sacoding.entity.SAUser;
 
-public interface UserRepository extends JpaRepository<User, String> {
+public interface UserRepository extends JpaRepository<SAUser, String> {
+
+    Optional<SAUser> findByEmail(String email);
 
     Set<UserDTO> findByBatchId(String batchId);
 

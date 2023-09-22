@@ -1,19 +1,28 @@
 package io.legendofjava.sacoding.entity;
 
+import java.sql.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import io.legendofjava.sacoding.Enum.AssignmentType;
 import lombok.Data;
 
-import javax.persistence.*;
-import java.util.Date;
 
 //This assignment is the facilitator's (teacher's) version of the assignment
 
-@Entity
 @Data
+@Entity
+@Table(name = "ASSIGNMENT")
 public class Assignment {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String batchId;
 

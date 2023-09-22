@@ -10,3 +10,31 @@ spring:
     hibernate:
       ddl-auto: update
       show-sql: true
+  jackson:
+    default-property-inclusion: NON_NULL
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${GMAIL_ADDRESS:LegendOfJavaSACoding@gmail.com} # This is for demo only, will probably need a business account
+    password: ${GMAIL_PASSWORD:supersecurepassword}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+server:
+  servlet:
+    session:
+      timeout: 20m  # This is a max inactive time, it'll only kill the session after 20 minutes of complete inactivity
+      
+logging:
+  level:
+    io.legendofjava.sacoding: ${LOG_LEVEL:INFO}
+    
+s3:
+  bucket:
+    name: bucket-hackathon-test-12983765123
+    accessKey:
+    secretKey:
