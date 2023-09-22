@@ -51,7 +51,7 @@ public class AuthController {
 
 	@PostMapping("/register")
 	@ResponseStatus(HttpStatus.CREATED)
-	public ResponseEntity<Object> register(@RequestBody LoginRequest registerReq) {
+	public ResponseEntity<Object> register(@RequestBody RegisterRequest registerReq) {
 		String id = userService.register(registerReq);
 		return ResponseEntity.created(
 				ServletUriComponentsBuilder.fromCurrentContextPath().pathSegment("students", id).build().toUri())
@@ -66,4 +66,13 @@ public class AuthController {
 class LoginRequest {
 	private String username;
 	private String password;
+}
+
+@Data
+class RegisterRequest {
+	private String firstName;
+	private String lastName;
+	private String email;
+	private String password;
+	private String reEnterPassword;
 }

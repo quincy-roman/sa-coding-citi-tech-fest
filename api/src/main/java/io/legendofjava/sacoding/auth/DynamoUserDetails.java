@@ -23,10 +23,10 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @RequiredArgsConstructor
 public class DynamoUserDetails implements UserDetailsService {
-	
+
 	private final UserRepository repo;
 	private final PasswordEncoder encoder;
-	
+
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		log.debug("Checking for <{}>", email);
@@ -36,7 +36,7 @@ public class DynamoUserDetails implements UserDetailsService {
 		// Might need to do password check here...
 		return new User(email, user.getPassword(), getAuthorities(user.getRole()));
 	}
-	
+
 	private Collection<? extends GrantedAuthority> getAuthorities(Role role) {
 		return List.of(new SimpleGrantedAuthority(role.privilege()));
 	}
@@ -48,20 +48,24 @@ public class DynamoUserDetails implements UserDetailsService {
 	 * @return the generated id for the user
 	 * @throws RuntimeException if provided email is not unique
 	 */
-	public String register(LoginRequest req) {
-		log.debug("Trying to register <{}>", req.getUsername());
-		
-		var potentialUser = repo.findByEmail(req.getUsername());
+	public String register(RegisterRequest req) {
+		log.debug("Trying to register <{}>", req.getEmail());
+
+		var potentialUser = repo.findByEmail(req.getEmail());
 		if (potentialUser.isPresent())
-			throw new RuntimeException("User " + req.getUsername() + " already exists");
+			throw new RuntimeException("User " + req.getEmail() + " already exists");
+
+		if (!req.getPassword().equals(req.getReEnterPassword()))
+			throw new RuntimeException("Passwords do not match!");
 
 		var hashedPass = encoder.encode(req.getPassword());
-//		SAUser user = repo.save(new SAUser(req.getUsername(), hashedPass, Role.UNASSIGNED));
 		SAUser newUser = new SAUser();
-		newUser.setEmail(req.getUsername());
+		newUser.setEmail(req.getEmail());
+		newUser.setFirstName(req.getFirstName());
+		newUser.setLastName(req.getLastName());
 		newUser.setPassword(hashedPass);
 		newUser.setRole(Role.UNVERIFIED);
-		
+
 		SAUser user = repo.save(newUser);
 		return user.getId();
 	}
