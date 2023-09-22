@@ -5,17 +5,19 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { InProgressComponent } from './in-progress/in-progress.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  {path: 'testingStuff', component: TestPageComponent},
+  { path: 'testingStuff', component: TestPageComponent },
   { path: '', component: AppComponent },
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'wip', component: InProgressComponent}
+  {path: 'wip', component: InProgressComponent},
+  {path: 'home', component: HomeComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
