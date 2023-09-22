@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && npm run move",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "move": "rm -rf ../api/src/main/resources/* && cp -r ./dist/ui/* ../api/src/main/resources",
     "serve": "lite-server --baseDir=\"dist/ui\""
   },
   "private": true,
