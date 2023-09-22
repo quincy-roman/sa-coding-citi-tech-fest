@@ -8,7 +8,7 @@ public class AngularController {
 	
 	@GetMapping("/")
 	public String index() {
-		return "index";
+		return "index.html";
 	}
 
 }
