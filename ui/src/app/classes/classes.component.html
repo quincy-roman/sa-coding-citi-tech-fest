@@ -1,5 +1,7 @@
 <app-main>
-    <app-box [title]="classes">
-        <app-table2 [headers]="tableHeaders" [rows]="tableRows"></app-table2>
+    <app-box [title]="classes" [content]="content">
     </app-box>
+    <ng-template #content>
+        <app-table2 [headers]="tableHeaders" [rows]="tableRows"></app-table2>
+    </ng-template>
 </app-main>

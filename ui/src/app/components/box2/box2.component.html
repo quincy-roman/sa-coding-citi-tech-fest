@@ -1,8 +1,8 @@
-<div class="">
-    <div class="bg-[#03BAC0] rounded-t-lg p-8">
-      <span class="text-white text-left font-semibold text-xl tracking-tight">{{title}}</span>
-    </div>
-    <div class="bg-[#B4EAEE] rounded-b-lg py-12 px-4 lg:px-24 h-1/4">
-        <ng-content></ng-content>
-    </div>
+<div  style="width: 100%; display: flex; flex-direction: column; min-height: 35%;" class="header bg-[#B4EAEE]">
+  <div style="width: 100%; padding: 20px 0; color: white;" class="header bg-[#03BAC0]">
+      <p style="margin-left: 18px;">{{title}}</p>
   </div>
+  <div style="padding: 20px;">
+      <ng-content></ng-content>
+  </div>
+</div>

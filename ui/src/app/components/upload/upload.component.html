@@ -1,10 +1,13 @@
-<app-box title="Upload">
-<form>
+<app-box title="Upload" [content]="content">
+
+</app-box>
+<ng-template #content>
+  <form>
     <div class="mb-6" *ngFor="let label in ['Assignment Name:', 'Class:', 'Max Score:', 'Due Date:', 'Assignment Link:']">
       <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{label}}</label>
       <input  class="shadow-sm bg-gray-50 border" >
     </div>
-   
+     
     <button type="submit" class="text-white">Submit</button>
   </form>
-</app-box>
+</ng-template>
