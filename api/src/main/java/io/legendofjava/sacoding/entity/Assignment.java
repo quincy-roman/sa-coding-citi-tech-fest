@@ -14,16 +14,17 @@ public class Assignment {
 
     @Id
     @GeneratedValue
-    private String id; //@Column(name = "assignment_id")
-
-    @ManyToOne
-    @JoinColumn(name="batch_id", nullable=false)
-    private Batch batch;
+    private String id;
+    private String batchId;
 
     private String name;
     private Integer maxScore;
+
+    @Enumerated(EnumType.STRING)
     private AssignmentType type;
     private Date dueDate;
+
+    private String s3FilePath;
 
     //Assignment
     // Homework, Quiz, Test

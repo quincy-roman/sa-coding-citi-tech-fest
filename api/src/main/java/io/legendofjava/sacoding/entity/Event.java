@@ -16,13 +16,8 @@ public class Event {
     @GeneratedValue
     private String eventId;
 
-    @OneToOne
-    @JoinColumn(name = "assignment_id", nullable = true)
-    private Assignment assignment;
-
-    @ManyToOne
-    @JoinColumn(name="batch_id", nullable=false)
-    private Batch batch;
+    private String assignmentId;
+    private String batchId;
 
     private String name;
     private String description;

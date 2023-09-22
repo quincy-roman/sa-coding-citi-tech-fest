@@ -8,6 +8,7 @@ import java.util.Optional;
 
 @Repository
 public interface BatchRepository extends JpaRepository<Batch, String> {
+
     Optional<Batch> findById(String id);
 
 }

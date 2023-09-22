@@ -9,17 +9,17 @@ import java.util.Date;
 
 @Entity
 @Data
-public class SubmittedAssignment {
+public class Submission {
 
     @Id
     @GeneratedValue
     private String id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    private String userId;
 
-    private String name;
+    private String assignmentId;
+
+    private String s3FilePath;
 
     private Integer grade;
 
