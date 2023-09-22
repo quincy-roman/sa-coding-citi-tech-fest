@@ -4,6 +4,13 @@
 
 @tailwind utilities;
 /* You can add global styles to this file, and also import other style files */
+/* @apply 
+.primary { bg-primary-light, dark:bg-primary-dark}
+
+@apply
+.secodary { bg-secondary}; */
+/* .secundary { placeholder-secundary-light }; */
+
 html,body{
     height: 100%;
 }

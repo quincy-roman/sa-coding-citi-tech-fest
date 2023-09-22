@@ -14,6 +14,7 @@ import { GreetingComponent } from './components/greeting/greeting.component';
 import { GradeComponent } from './components/grade/grade.component';
 import { AssigmentComponent } from './components/assigment/assigment.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ClassesComponent } from './classes/classes.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FooterComponent } from './components/footer/footer.component';
     GradeComponent,
     AssigmentComponent,
     FooterComponent,
+    ClassesComponent,
 
   ],
   imports: [

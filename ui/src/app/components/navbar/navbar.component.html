@@ -12,11 +12,28 @@
       </div>
   
       <div>
-        <button type="button" class="flex text-sm 0 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown-user">
+        <button  type="button" class="flex text-sm 0 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false"  (click)="setToggleAccount()">
           <span class="sr-only">Open user menu</span>
           <img class="w-8 h-8 rounded-full" src="https://img.icons8.com/ios/50/user-male-circle--v1.png" alt="user photo">
         
         </button>
+              <!-- Dropdown menu -->
+              <div id="dropdownNavbar" class="z-10 absolute -translate-x-36 translate-y-2 font-normal bg-teal-200 divide-y divide-gray-100 rounded-lg shadow w-44 text-teal-200 dark:divide-teal-600" [ngClass]="{ 'block': toggleAccount, 'hidden': !toggleAccount }">
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                  <li>
+                    <a href="#" class="block px-4 py-2 hover:bg-teal-600 dark:hover:text-white">Dashboard</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 hover:bg-teal-600 dark:hover:text-white">Settings</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 hover:bg-teal-600 dark:hover:text-white">Earnings</a>
+                  </li>
+                </ul>
+                <div class="py-1">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:teal-600 dark:text-gray-400 dark:hover:text-white">Sign out</a>
+                </div>
+            </div>
       </div>
           <!-- <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown-user">
             <div class="px-4 py-3" role="none">

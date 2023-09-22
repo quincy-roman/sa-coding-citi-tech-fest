@@ -7,6 +7,7 @@ import { Aside } from '../../services/aside.service';
 })
 export class NavbarComponent implements OnInit {
   isNavbarOpen = true
+  toggleAccount = false
   constructor(public aside: Aside) {
     this.isNavbarOpen = aside.getToggleAside()
   }
@@ -15,6 +16,10 @@ export class NavbarComponent implements OnInit {
   
   toggleAside() {
     this.aside.setToggleAside(true);
+  }
+
+  setToggleAccount() {
+    this.toggleAccount = !this.toggleAccount;
   }
 
 }
