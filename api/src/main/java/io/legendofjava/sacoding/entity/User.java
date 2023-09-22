@@ -1,11 +1,9 @@
 package io.legendofjava.sacoding.entity;
 
+import io.legendofjava.sacoding.Enum.Role;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
 
@@ -19,17 +17,17 @@ public class User {
 
     private String email;
 
-    //private String password;
+    private String password;
 
-    private String fName;
+    private String firstName;
 
-    private String lName;
+    private String lastName;
 
-    private String role;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
-    @ManyToMany
-    private Set<Batch> batch;
+    @Column(name = "BATCH_ID", nullable = true) // only learners have a batch id
+    private String batchId;
 
-    private Date attendance;
 
 }
