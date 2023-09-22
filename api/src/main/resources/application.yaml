@@ -33,5 +33,5 @@ logging:
     
 s3:
   bucket:
-    name: ${BUCKET_NAME}
+    name: ${BUCKET_NAME:some-bucket}
 

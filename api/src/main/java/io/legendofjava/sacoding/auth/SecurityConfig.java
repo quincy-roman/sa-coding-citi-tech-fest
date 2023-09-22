@@ -32,7 +32,7 @@ public class SecurityConfig {
 		http.csrf(csrf -> csrf.disable())
 			.securityContext(context -> context.securityContextRepository(repo))
 			.authorizeHttpRequests(auth -> 
-				auth.antMatchers("/swagger-ui/**", "/v3/api-docs/**", "/").permitAll()
+				auth.antMatchers("/swagger-ui/**", "/v3/api-docs/**", "/", "/assets/**", "/*.js", "/*.png", "/*.json", "/*.html", "/*.css", "/*.*.js", "/*.webmanifest").permitAll()
 					.antMatchers(HttpMethod.POST, "/login", "/register").permitAll()
 					.antMatchers("/facilitators/**").hasRole(Role.FACILITATOR.name())
 					.antMatchers("learning/**").hasRole(Role.LEARNER.name())
