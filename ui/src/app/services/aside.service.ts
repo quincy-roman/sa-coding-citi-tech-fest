@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class Aside {
-  public isToggledAside: boolean = false;
+  public isToggledAside: boolean = true;
 
   setToggleAside = (value: boolean) => {
     this.isToggledAside = value;

@@ -1,24 +1,26 @@
 <nav class="">
-    <div class="rounded flex items-center justify-between flex-wrap bg-teal-500 p-6"  >
+    <div class="rounded flex flex-row items-center justify-between space-x-4 space-y-4 bg-teal-500 p-6"  >
   
-      <div class="block sm:hidden ">
-          <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white" (click)="toggleAside()">
+      <div class="block lg:hidden flex-1 p-4">
+          <button class="flex p-3 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white" (click)="toggleAside()">
             <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
           </button>
       </div>
   
-      <div class="flex items-center flex-shrink-0 text-white mr-6">
-        <span class="font-semibold text-xl tracking-tight">Coding SA</span>
-      </div>
+ 
+      
+          <!-- <img class="m-0" src="../../../assets/logo_full.png"  alt="Your Company"> -->
+     
+
   
       <div>
-        <button  type="button" class="flex text-sm 0 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false"  (click)="setToggleAccount()">
+        <button  type="button" class="flex flex-1  text-sm 0 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false"  (click)="setToggleAccount()">
           <span class="sr-only">Open user menu</span>
           <img class="w-8 h-8 rounded-full" src="https://img.icons8.com/ios/50/user-male-circle--v1.png" alt="user photo">
         
         </button>
               <!-- Dropdown menu -->
-              <div id="dropdownNavbar" class="z-10 absolute -translate-x-36 translate-y-2 font-normal bg-teal-200 divide-y divide-gray-100 rounded-lg shadow w-44 text-teal-200 dark:divide-teal-600" [ngClass]="{ 'block': toggleAccount, 'hidden': !toggleAccount }">
+              <div id="dropdownNavbar" class="z-10 absolute -translate-x-36 translate-y-2 font-normal shadow-2xl bg-teal-200 divide-y divide-gray-100 rounded-lg w-44 text-teal-200 dark:divide-teal-600" [ngClass]="{ 'block': toggleAccount, 'hidden': !toggleAccount }">
                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                   <li>
                     <a href="#" class="block px-4 py-2 hover:bg-teal-600 dark:hover:text-white">Dashboard</a>
