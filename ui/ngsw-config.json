@@ -29,8 +29,8 @@
   ],
   "dataGroups": [
     {
-      "name": "allEndPoints",
-      "urls": ["/"],
+      "name": "APIEndpoints",
+      "urls": ["/api"],
       "cacheConfig": {
         "strategy": "freshness",
         "maxSize": 1000,

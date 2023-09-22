@@ -11,11 +11,12 @@ import { facilitatorsGuard } from './components/guards/facilitators.guard';
 
 const routes: Routes = [
   { path: 'testingStuff', component: TestPageComponent },
-  { path: '', component: AppComponent },
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'wip', component: InProgressComponent},
-  {path: 'home', component: HomeComponent},
+  /** This Redirect will need to Change! */
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'wip', component: InProgressComponent },
+  { path: 'home', component: HomeComponent },
   {path: 'facilitator-home', component: FacilitatorHomeComponent, canActivate: [facilitatorsGuard]}
 ];
 

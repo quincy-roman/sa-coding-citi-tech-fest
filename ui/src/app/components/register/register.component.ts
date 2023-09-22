@@ -5,29 +5,29 @@ import { ApiService } from 'src/app/services/api.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  userInfo : RegisterationInfo = {
+  userInfo: RegisterationInfo = {
     firstName: '',
     lastName: '',
     email: '',
-    password: ''
-  }
-  confirmPass = ''
+    password: '',
+  };
+  confirmPass = '';
   errMsg: string = '';
 
-  constructor(private api : ApiService){}
+  constructor(private api: ApiService) {}
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
-  register(){
+  register() {
     this.errMsg = '';
-    if(this.userInfo.password !== this.confirmPass)
-      this.errMsg = 'passwords do not match'
-
-    else this.api.register(this.userInfo).subscribe({next: data => console.log(data)})
+    if (this.userInfo.password !== this.confirmPass)
+      this.errMsg = 'passwords do not match';
+    else
+      this.api
+        .registerUser(this.userInfo)
+        .subscribe({ next: (data) => console.log(data) });
   }
 }

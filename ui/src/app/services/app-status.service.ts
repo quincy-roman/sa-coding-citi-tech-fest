@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+/** This Component Provides Online Status of the Application*/
+
 @Injectable({
   providedIn: 'root',
 })
