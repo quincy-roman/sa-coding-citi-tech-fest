@@ -1,0 +1,20 @@
+* {
+  text-align: center;
+  font-family: Jaldi;
+}
+
+.content {
+  background-image: url("src/assets/Web_App_Icons/Oops!.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px dashed #4cabae;
+  width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 15px;
+}
+
+h2 {
+  font-size: 15px;
+}

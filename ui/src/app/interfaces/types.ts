@@ -32,3 +32,11 @@ export interface PushNoteCallback {
   eventType: string;
   callback: (event: Event) => void;
 }
+
+// for the registration endpoint
+export interface RegisterationInfo {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+}
