@@ -28,10 +28,10 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequiredArgsConstructor
 public class AuthController {
-	
+
 	private final PostgresUserDetails userService;
 	private final AuthenticationManager authManager;
-	
+
 	private final SecurityContextRepository securityContextRepo;
 	private final SecurityContextHolderStrategy securityStrat = SecurityContextHolder.getContextHolderStrategy();
 
@@ -46,7 +46,7 @@ public class AuthController {
 		SecurityContext context = securityStrat.createEmptyContext();
 		context.setAuthentication(auth);
 		securityStrat.setContext(context);
-		
+
 		log.debug("Saving new context: {}", context);
 		securityContextRepo.saveContext(context, req, res);
 	}
@@ -54,17 +54,19 @@ public class AuthController {
 	@PostMapping("/register")
 	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<Object> register(@RequestBody RegisterRequest registerReq) {
-		String id = userService.register(registerReq);
+		String id = userService.register(registerReq, ServletUriComponentsBuilder.fromCurrentContextPath());
 		return ResponseEntity.created(
-				ServletUriComponentsBuilder.fromCurrentContextPath().pathSegment("students", id).build().toUri())
+				ServletUriComponentsBuilder.fromCurrentContextPath().pathSegment("api", "learners", id).build().toUri())
 				.build();
 	}
-	
+
 	@PostMapping("/verify")
 	public ResponseEntity<Object> verify(@RequestBody Verification verification) {
-		return userService.verifyNewUser(verification) ? ResponseEntity.ok().build() : ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+		return userService.verifyNewUser(verification) ? ResponseEntity.ok().build()
+				: ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 	}
-	
+
 	@PostMapping("/logout")
-	public void logout() {}
+	public void logout() {
+	}
 }

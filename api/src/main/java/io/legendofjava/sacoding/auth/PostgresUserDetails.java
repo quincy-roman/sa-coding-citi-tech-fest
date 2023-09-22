@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -14,10 +15,12 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import io.legendofjava.sacoding.Enum.Role;
 import io.legendofjava.sacoding.auth.dto.RegisterRequest;
 import io.legendofjava.sacoding.auth.dto.Verification;
+import io.legendofjava.sacoding.auth.event.OnRegistrationEvent;
 import io.legendofjava.sacoding.auth.event.RegistrationRepository;
 import io.legendofjava.sacoding.auth.event.RegistrationToken;
 import io.legendofjava.sacoding.entity.SAUser;
@@ -33,6 +36,7 @@ public class PostgresUserDetails implements UserDetailsService {
 	private final UserRepository repo;
 	private final PasswordEncoder encoder;
 	private final RegistrationRepository registrationRepo;
+	private final ApplicationEventPublisher publisher;
 
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
@@ -55,22 +59,26 @@ public class PostgresUserDetails implements UserDetailsService {
 	 * @return the generated id for the user
 	 * @throws RuntimeException if provided email is not unique
 	 */
-	public String register(RegisterRequest req) {
-		log.debug("Trying to register <{}>", req.getEmail());
+	public String register(RegisterRequest req, ServletUriComponentsBuilder contextPath) {
+		String email = req.getEmail();
+		log.debug("Trying to register <{}>", email);
 
-		var potentialUser = repo.findByEmail(req.getEmail());
+		var potentialUser = repo.findByEmail(email);
 		if (potentialUser.isPresent())
-			throw new RuntimeException("User " + req.getEmail() + " already exists");
+			throw new UserAlreadyExistsException("User " + email + " already exists");
 
 		var hashedPass = encoder.encode(req.getPassword());
 		SAUser newUser = new SAUser();
-		newUser.setEmail(req.getEmail());
+		newUser.setEmail(email);
 		newUser.setFirstName(req.getFirstName());
 		newUser.setLastName(req.getLastName());
 		newUser.setPassword(hashedPass);
 		newUser.setRole(Role.UNVERIFIED);
 
 		SAUser user = repo.save(newUser);
+		
+		publisher.publishEvent(new OnRegistrationEvent(email, contextPath));
+		
 		return user.getId();
 	}
 	
