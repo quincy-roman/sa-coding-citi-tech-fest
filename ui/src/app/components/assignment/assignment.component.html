@@ -1,6 +1,9 @@
-<app-box title="Assigments">
-    <div class="text-[#0B5D63] text-left font-semibold text-xl tracking-tight m-3 p-3">Due Soon</div>
-    <app-table2 [headers]="tableHeaders" [rows]="tableRows"></app-table2>
-    <div class="text-[#0B5D63] text-left font-semibold text-xl tracking-tight m-3 p-3">Coming Soon</div>
-    <app-table [headers]="tableHeaders" [rows]="tableRows"></app-table>
+<app-box title="Assigments" [content]="content">
+    
 </app-box>
+<ng-template #content>
+    <div class="text-[#0B5D63] text-left font-semibold text-xl tracking-tight m-3 p-3">Due Soon</div>
+    <app-table2 [headers]="['Class', 'Number of Students', 'Overall Grade']" [rows]="[['Class 101', '15', '82'], ['Class 102', '20', '78'], ['Class 103', '18', '85']]"></app-table2>
+    <div class="text-[#0B5D63] text-left font-semibold text-xl tracking-tight m-3 p-3">Coming Soon</div>
+    <app-table2 [headers]="tableHeaders" [rows]="tableRows"></app-table2>
+</ng-template>

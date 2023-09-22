@@ -1,6 +1,5 @@
-<app-navbar></app-navbar>
-<app-aside></app-aside>
-<br/>
+
+<app-main>
 <app-box [title]="'Events'" [content]="contentBox"></app-box>
 <ng-template #contentBox>
 <div class="flex items-center justify-center py-8 px-4">
@@ -462,6 +461,7 @@
 <br/>
 <app-table2 [headers]="['Assignment', 'Class', 'Due Date']" [rows]="[['Assignment 1', 'Class 101', '9/20'], ['Assignment 2', 'Class 101', '9/22']]"></app-table2>
 <div>
-    
+
 </div>
 </ng-template>
+</app-main>
