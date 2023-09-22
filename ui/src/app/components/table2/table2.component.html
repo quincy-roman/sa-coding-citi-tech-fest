@@ -1,0 +1,24 @@
+<div style="overflow: auto;">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+    <thead class="text-xs text-teal-700 uppercase bg-teal-50 dark:bg-teal-800 dark:text-gray-400" style="background-color: #CAF0F3;">
+        <tr>
+            <th scope="col" class="px-6 py-3" *ngFor="let header of headers">
+                {{header}}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="bg-white border-b dark:bg-teal-700 dark:border-gray-700" *ngFor="let row of rows; let i = index">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                {{rows[i][0]}}
+            </th>
+            <td class="px-6 py-4" *ngFor="let row of rows[i].slice(1)">
+                {{row}}
+            </td>
+
+        </tr>
+
+
+    </tbody>
+    </table>
+</div>
