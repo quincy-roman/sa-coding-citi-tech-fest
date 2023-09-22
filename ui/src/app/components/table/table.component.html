@@ -1,0 +1,20 @@
+<div class="bg-[#DAF5F7] overflow-hidden p-4">
+    <table class="min-w-full">
+      <thead>
+        <tr >
+          <ng-container *ngFor="let header of headers">
+            <th class="px-16 py-2 text-left text-sm">{{ header }}</th>
+          </ng-container>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let row of rows; let i = index">
+          <tr class="even:bg-[#c4f9ff] odd:bg-[#9fe9f3] ">
+            <ng-container *ngFor="let cell of row; let j = index" >
+              <td class=" px-4 py-2 text-center">{{ cell }}</td>
+            </ng-container>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+</div>

@@ -19,7 +19,7 @@ export class PushNotifyService {
   /**
    * Asks for user permission to enable push notifications.
    */
-  reqNotifyPerm = async () => {
+  private reqNotifyPerm = async () => {
     const perm = await Notification.requestPermission();
     if (perm === 'granted') {
       this.canPushNotify = true;
@@ -28,7 +28,16 @@ export class PushNotifyService {
     }
   };
 
-  pushNotify(options: PushNote = {}, eventCallbacks?: PushNoteCallback[]) {
+  /**
+   * Adds a Notification through the browser.
+   * @param options
+   * @param eventCallbacks
+   * @returns
+   */
+  public pushNotify(
+    options: PushNote = {},
+    eventCallbacks?: PushNoteCallback[]
+  ) {
     if (!this.canPushNotify) {
       console.warn('Do not have permission to push notifications.');
       return;

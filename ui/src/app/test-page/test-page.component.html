@@ -1,1 +1,8 @@
+<div>
+  <h3>Application Status</h3>
+  <span *ngIf="appStatus.isOnline" style="color:#009c00">Online</span>
+  <span *ngIf="!appStatus.isOnline" style="color:#830202">Offline</span>
+</div>
+<br>
+<br>
 <button (click)="notify.pushNotify()">Push Notification Test</button>

@@ -1,0 +1,20 @@
+<footer class="rounded-lg bg-[#91CACE]">
+    <div class="mx-auto w-full max-w-screen-xl">
+      <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+        <div *ngFor="let item of [1, 2, 3, 4]; let i = index">
+            <li  class="flex flex-1 items-stretch justify-center">
+ 
+
+            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li class="mb-4" >
+                    <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-black-100 dark:hover:bg-gray-700 group">
+                        <img width="50" height="50" src={{icons[i][0]}} alt="quiz"/>
+                      </a>
+                      <span style="color: white;">{{icons[i][1]}}</span>
+                </li>
+            </ul>
+        </div>
+      </div>
+
+    </div>
+</footer>
