@@ -17,6 +17,8 @@ import { GreetingComponent } from './components/greeting/greeting.component';
 import { GradeComponent } from './components/grade/grade.component';
 import { AssigmentComponent } from './components/assigment/assigment.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FacilitatorHomeComponent } from './components/facilitator-home/facilitator-home.component';
+import { BoxComponent } from './components/box/box.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { FooterComponent } from './components/footer/footer.component';
     GradeComponent,
     AssigmentComponent,
     FooterComponent,
+    FacilitatorHomeComponent,
+    BoxComponent,
 
   ],
   imports: [
