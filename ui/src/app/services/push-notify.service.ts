@@ -34,7 +34,10 @@ export class PushNotifyService {
    * @param eventCallbacks
    * @returns
    */
-  public pushNotify(options: PushNote = {}, eventCallbacks?: PushNoteCallback[]) {
+  public pushNotify(
+    options: PushNote = {},
+    eventCallbacks?: PushNoteCallback[]
+  ) {
     if (!this.canPushNotify) {
       console.warn('Do not have permission to push notifications.');
       return;
