@@ -13,5 +13,7 @@ public interface LearningManagementService {
 	Collection<Batch> getBatches(String facilitatorId);
 	
 	Collection<Submission> getSubmissions(Collection<String> userIds);
+	
+	Collection<Submission> getSubmissionsForLearner(String userId);
 
 }
